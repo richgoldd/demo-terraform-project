@@ -11,22 +11,28 @@ variable "aws_profile" {
   default     = "default"
 }
 
-variable "azs" {
-  type        = list(string)
-  description = "Subnet AZs"
-  default     = ["us-west-1a", "us-west-1b"]
+variable "ami_id" {
+  type        = string
+  description = "AMI Ids"
+  default     = "ami-00d8a762cb0c50254"
 }
 
-variable "subnet_id_1" {
+variable "instance_type" {
   type        = string
-  description = "Public Subnet IDs"
-  default     = "module.vpc.public_subnets[0]"
+  description = "Instance Types"
+  default     = "t2.micro"
 }
 
-variable "subnet_id_2" {
+variable "key_name" {
   type        = string
-  description = "Public Subnet IDs"
-  default     = "module.vpc.public_subnets[1]"
+  description = "Key Name"
+  default     = "richaws"
+}
+
+variable "repo_name" {
+  type        = string
+  description = "Repository Name"
+  default     = "product_service"
 }
 
 
