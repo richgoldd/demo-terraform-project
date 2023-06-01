@@ -1,7 +1,7 @@
 #Provider
 
 #Note: Ensure to disable backend resource before applying to first register local tfstate file. Afterwards enable for remote tfstate setup
-terraform {      
+terraform {
   # backend "s3" {
   #   bucket         = "preprod-environment-tfstate" 
   #   key            = "preprod-environment/terraform.tfstate"
@@ -10,7 +10,7 @@ terraform {
   #   encrypt        = true
   # }
 
-required_providers {
+  required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "4.63.0"
@@ -19,12 +19,12 @@ required_providers {
 }
 
 provider "aws" {
-  region = var.aws_region
+  region  = var.aws_region
   profile = "terra"
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket        = "preprod-environment-tfstate" 
+  bucket        = "preprod-environment-tfstate"
   force_destroy = true
 }
 
@@ -36,7 +36,7 @@ resource "aws_s3_bucket_versioning" "terraform_bucket_versioning" {
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "terraform_state_crypto_conf" {
-  bucket        = aws_s3_bucket.terraform_state.bucket 
+  bucket = aws_s3_bucket.terraform_state.bucket
   rule {
     apply_server_side_encryption_by_default {
       sse_algorithm = "AES256"

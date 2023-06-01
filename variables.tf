@@ -6,27 +6,27 @@ variable "aws_region" {
 }
 
 variable "aws_profile" {
-  type = string
+  type        = string
   description = "AWS default profile"
-  default = "default"
+  default     = "default"
 }
 
 variable "azs" {
-  type = list(string)
+  type        = list(string)
   description = "Subnet AZs"
-  default = ["us-west-1a", "us-west-1b"]
+  default     = ["us-west-1a", "us-west-1b"]
 }
 
 variable "subnet_id_1" {
-  type = string
+  type        = string
   description = "Public Subnet IDs"
-  default = "module.vpc.public_subnets[0]"
+  default     = "module.vpc.public_subnets[0]"
 }
 
 variable "subnet_id_2" {
-  type = string
+  type        = string
   description = "Public Subnet IDs"
-  default = "module.vpc.public_subnets[1]"
+  default     = "module.vpc.public_subnets[1]"
 }
 
 
