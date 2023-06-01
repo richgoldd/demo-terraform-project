@@ -36,6 +36,10 @@ resource "aws_instance" "Jenkins_server" {
 
   depends_on = [module.vpc, aws_security_group.webserver_sg_rules]
 
+  tags = {
+    Name = "Jenkins Master Data Apps"
+    }
+
   provisioner "remote-exec"  {
     inline  = [
       "sudo yum install -y jenkins java-11-openjdk-devel",
@@ -54,8 +58,5 @@ resource "aws_instance" "Jenkins_server" {
     user         = "ec2-user"
     private_key  = "${file("~/.ssh/richaws)}"
    }
-  
-  tags = {
-    Name = "Jenkins Master - Data Apps"
-  }
 }
+  
