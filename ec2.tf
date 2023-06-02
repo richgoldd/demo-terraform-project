@@ -53,7 +53,7 @@ resource "aws_instance" "Jenkins_server" {
       "sudo systemctl start jenkins",
       ]
    }
-  connection {
+  connection {  
     type         = "ssh"
     host         = self.public_ip
     user         = "ec2-user"
