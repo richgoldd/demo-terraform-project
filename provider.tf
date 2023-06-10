@@ -7,7 +7,7 @@ terraform {
   #  key            = "preprod-environment/terraform.tfstate"
   #  region         = "us-west-1"
   # dynamodb_table = "terraform-state-locking"
-   # encrypt        = true
+  # encrypt        = true
   # }
 
   required_providers {

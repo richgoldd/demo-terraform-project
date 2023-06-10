@@ -50,22 +50,5 @@ resource "aws_security_group" "webserver_sg_rules" {
   depends_on = [module.vpc]
 }
 
-resource "aws_security_group_rule" "worknode" {
-  type              = "ingress"
-  from_port         = 31118
-  to_port           = 31118
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = "sg-0d2d97325da9d5b66"
-}
-
-resource "aws_security_group_rule" "worknode1" {
-  type              = "ingress"
-  from_port         = 32702
-  to_port           = 32702
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = "sg-0d2d97325da9d5b66"
-}
 
 
