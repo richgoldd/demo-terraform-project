@@ -3,11 +3,11 @@
 #Note: Ensure to disable backend resource before applying to first register local tfstate file. Afterwards enable for remote tfstate setup
 terraform {
   # backend "s3" {
-  #   bucket         = "preprod-environment-tfstate" 
-  #   key            = "preprod-environment/terraform.tfstate"
-  #   region         = "us-west-1"
-  #   dynamodb_table = "terraform-state-locking"
-  #   encrypt        = true
+  #  bucket         = "preprod-environment-tfstate" 
+  #  key            = "preprod-environment/terraform.tfstate"
+  #  region         = "us-west-1"
+  # dynamodb_table = "terraform-state-locking"
+   # encrypt        = true
   # }
 
   required_providers {
@@ -23,7 +23,7 @@ provider "aws" {
   profile = "terra"
 }
 
-# resource "aws_s3_bucket" "terraform_state" {
+#resource "aws_s3_bucket" "terraform_state" {
 #   bucket        = "preprod-environment-tfstate"
 #   force_destroy = true
 # }
@@ -53,8 +53,5 @@ provider "aws" {
 #     type = "S"
 #   }
 # }
-
-
-
 
 
